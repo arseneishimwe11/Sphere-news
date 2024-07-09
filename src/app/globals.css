@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+*/
+body {
+  @apply bg-white dark:bg-[#171717] text-gray-700 dark:text-gray-300;
+}
+
+/* For styling scroll bar */
+.overflow-auto::-webkit-scrollbar {
+    height: 6px;
+}
+
+.overflow-auto::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background: #CFDBE3;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb {
+    background-color: #2EA9DF;
+    border-radius: 6px;
+}
+
+@media (max-width: 442px) {
+    .overflow-auto::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+#topnavmenucontent::-webkit-scrollbar {
+  display: none;
+}
+
+.componentcontainer {
+  @apply w-full 2xl:w-[1380px] content-center m-auto
+}
+
+.max-width-1380px {
+  @apply w-full 2xl:w-[1380px];
+}
+
+.text-black-color {
+  @apply text-black dark:text-white
+}
+
+
+.text-black-color-invert {
+  @apply text-white dark:text-black
+}
+
+.text-gray-dark-color {
+  @apply text-gray-700 dark:text-gray-300
+}
+
+.text-gray-dark-color-invert {
+  @apply text-gray-300 dark:text-gray-700
+}
+
+.text-gray-light-color {
+  @apply text-gray-600 dark:text-gray-400
+}
+
+.text-gray-light-color-invert {
+  @apply text-gray-400 dark:text-gray-600
+}
+
+.text-dark-blue-color {
+  @apply text-[#08305D] dark:text-[#4FB9E9]
+}
+
+.text-md-blue-color {
+  @apply text-blue-800 dark:text-blue-300
+}
+
+.whitebgblackfore {
+  @apply bg-white dark:bg-[#171717] text-gray-700 dark:text-gray-300;
+}
+
+.bg-black-color {
+  @apply bg-black dark:bg-white
+}
+
+.bg-gray-extra-light-color {
+  @apply bg-[#F0F9FF] dark:bg-[#002037]
+}
+
+.bg-gray-light-color {
+  @apply bg-[#EFF3F5] dark:bg-[#272727]
+}
+
+.bg-sky-light-color {
+  @apply bg-[#F8FCFF] dark:bg-[#002037]
+}
+
+.bg-sky-md-color {
+  @apply bg-[#CAEFFF] dark:bg-[#002037]
+}
+
+.bg-yellow-light-color {
+  @apply bg-[#FFF1E2] dark:bg-[#000E14]
+}
+
+.border-yellow-light-color {
+  @apply border-[#F8AE64] dark:border-[#07AE9B]
+}
+
+.border-gray-color {
+  @apply border-gray-600 dark:border-gray-300
+}
+
+.subscriber-background {
+  @apply bg-gradient-to-br from-[#FAB672] to-[#52BAE8] dark:from-[#05498D] dark:to-[#AD4517]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

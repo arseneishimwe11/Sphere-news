@@ -1,0 +1,44 @@
+.laptop-extrapage-bodycontainer #exploretrendingstorypanel {
+    @apply w-full pt-16 relative text-[#7F8487] dark:text-[#787B80]
+}
+
+.laptop-extrapage-bodycontainer #exploretrendingstorypanel .background {
+    @apply w-full 2xl:w-[50%] bg-gradient-to-r from-[#F9E0C5] dark:from-[#3A1F06] to-[#C9EFFF] dark:to-[#001036] p-16 pr-[25vw] left-0
+}
+
+.laptop-extrapage-bodycontainer #exploretrendingstorypanel .background h2 {
+    @apply text-[38px] text-gray-900 dark:text-gray-200 font-bold
+}
+
+.laptop-extrapage-bodycontainer #exploretrendingstorypanel .background p {
+    @apply text-[20px]
+}
+
+.laptop-extrapage-bodycontainer #exploretrendingstorypanel .storycomponentpanel {
+    @apply flex 2xl:w-auto px-8 justify-center gap-12 relative 2xl:absolute -top-12 2xl:top-48 2xl:right-0
+}
+
+.laptop-extrapage-bodycontainer #exploretrendingstorypanel .storycomponentpanel .storycomponentcontainer {
+    @apply flex flex-row w-full sm:w-[600px] shadow-xl rounded-xl overflow-hidden bg-white dark:bg-[#171717]
+}
+
+.laptop-extrapage-bodycontainer #exploretrendingstorypanel .storycomponentpanel .storycomponentcontainer .componentcontent {
+    @apply flex flex-col justify-center gap-4 items-start p-8 text-black dark:text-white
+}
+
+.laptop-extrapage-bodycontainer #exploretrendingstorypanel .storycomponentpanel .storycomponentcontainer .componentcontent img {
+    @apply w-[52px] h-[52px] border border-2 border-[#94D6F3] rounded-full
+}
+
+.laptop-extrapage-bodycontainer #exploretrendingstorypanel .storycomponentpanel .storycomponentcontainer .componentcontent h6 {
+    @apply text-[10px] font-bold
+}
+
+.laptop-extrapage-bodycontainer #exploretrendingstorypanel .storycomponentpanel .storycomponentcontainer .componentcontent span {
+    @apply text-[10px] text-gray-600 dark:text-gray-400
+}
+
+.laptop-extrapage-bodycontainer #exploretrendingstorypanel .storycomponentpanel .storycomponentcontainer .componentcontent h4 {
+    @apply text-[12px] sm:text-[18px] font-bold
+}
+

@@ -1,0 +1,75 @@
+.laptop-extrapage-bodycontainer #articlescomponent {
+    @apply relative w-full
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent #leftsidebarcontainer {
+    @apply hidden xl:block w-[calc((100vw-1380px)/2)] h-full absolute
+} 
+
+.laptop-extrapage-bodycontainer #articlescomponent #leftsidebarcontainer #leftsidebarpanel {
+    @apply w-full text-black dark:text-white px-8 sticky mt-[72px] top-4 z-[101]
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent #leftsidebarcontainer #leftsidebarpanel .panelgroup {
+    @apply flex flex-col items-center
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #articlesmaincomponentbody {
+    @apply flex flex-row items-start text-black dark:text-gray-200 border-b-4 border-gray-300 justify-between w-full
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #articlesmaincomponentbody #faqcomponentcontainer {
+    @apply my-8 
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #articlesmaincomponentbody #faqcomponentcontainer .title {
+    @apply text-black dark:text-white text-[24px] my-4
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #articlesmaincomponentbody #faqcomponentcontainer .faqItem {
+    @apply min-w-[360px] bg-[#F8F8F8] dark:bg-[#070707] border border-gray-400 rounded-xl
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #articlesmaincomponentbody #faqcomponentcontainer .faqItem .title {
+    @apply px-4 mt-8 text-black dark:text-white text-[16px]
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #articlesmaincomponentbody #faqcomponentcontainer .faqItem .description {
+    @apply px-4 my-4 text-gray-500 dark:text-gray-400 text-[16px]
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #articlesmaincomponentbody #faqcomponentcontainer .faqItem .extradescription {
+    @apply flex flex-row items-start gap-4 bg-white dark:bg-black  p-4 rounded-b-xl
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #articlesmaincomponentbody #faqcomponentcontainer .faqItem .extradescription h6 {
+    @apply text-black dark:text-white font-bold
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer>ul {
+    @apply flex flex-row text-xl text-black dark:text-gray-200 border-b-4 border-gray-300 font-bold justify-between
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #mainarticlesection {
+    @apply w-full
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #mainarticlesection .membershipoverlay {
+    @apply flex flex-col w-full -mt-[120px]
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #mainarticlesection .membershipoverlay .startarea {
+    @apply w-full h-[120px] bg-gradient-to-t from-[#fff] dark:from-black to-[transparent]
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #mainarticlesection .membershipoverlay .mainarea {
+    @apply flex flex-col gap-4 items-center w-full px-4 md:px-[15%] py-12 text-center bg-white dark:bg-black
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #mainarticlesection .membershipoverlay .mainarea .membershipitem {
+    @apply flex flex-row w-[75%] items-center p-4 border border-2  justify-between rounded-md relative
+}
+
+.laptop-extrapage-bodycontainer #articlescomponent .componentcontainer #articlesmaincomponentbody .rightsidebar {
+    @apply hidden xl:flex flex-col gap-12 w-[30%] py-8
+}

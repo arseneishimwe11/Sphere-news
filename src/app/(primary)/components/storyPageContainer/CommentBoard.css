@@ -1,0 +1,7 @@
+.laptop-extrapage-bodycontainer .componentcontainer #CommentBoard {
+    @apply flex flex-row my-16 justify-between w-full
+}
+
+.laptop-extrapage-bodycontainer .componentcontainer #CommentBoard #leftpart {
+    @apply flex flex-col w-full xl:w-[70%]
+}

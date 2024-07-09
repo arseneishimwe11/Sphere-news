@@ -1,0 +1,7 @@
+#countrysection {
+    @apply flex flex-col gap-2 p-4 
+}
+
+#countrysection p {
+    @apply p-2 bg-[#E7F0F5] dark:bg-[#0A0F18] text-[12px] rounded-sm
+}

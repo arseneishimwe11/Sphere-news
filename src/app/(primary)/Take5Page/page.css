@@ -1,0 +1,15 @@
+.take5component {
+    @apply flex flex-col w-full p-8 items-center z-[2] relative
+}
+
+.take5component h1 {
+    @apply text-[32px]
+}
+
+.take5component h3 {
+    @apply text-[16px]
+}
+
+.take5component Grid {
+    @apply my-4
+}

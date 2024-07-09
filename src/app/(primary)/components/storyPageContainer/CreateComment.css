@@ -1,0 +1,23 @@
+.createcomponentcontainer {
+    @apply w-full xl:w-[70%] mt-[102px]
+}
+
+.createcomponentcontainer #title {
+    @apply flex flex-row gap-2 items-center text-gray-700 dark:text-gray-200
+}
+
+.createcomponentcontainer #title img {
+    @apply dark:invert
+}
+
+.createcomponentcontainer #title a {
+    @apply font-bold hover:cursor-pointer
+} 
+
+.createcomponentcontainer #body {
+    @apply w-full bg-[#EBF5FB] p-4 my-4 rounded-xl
+}
+
+.createcomponentcontainer #body .panel {
+    @apply flex flex-col justify-center w-full gap-4 p-8 bg-white dark:bg-[#171717] rounded-xl
+}

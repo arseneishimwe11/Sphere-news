@@ -1,0 +1,8 @@
+#footerpanel {
+    @apply bg-[#EEF3F7] dark:bg-[#080B11] text-gray-600 dark:text-gray-400 pt-12
+}
+
+#footerpanel .footercontainer {
+    @apply m-auto content-center px-4 pb-8 w-full 2xl:w-[1380px]
+}
+

@@ -1,0 +1,16 @@
+.laptop-landingpage-bodycontainer {
+    @apply w-full bg-white dark:bg-[#171717] text-gray-700 dark:text-gray-300
+}
+
+.laptop-landingpage-videopagecontainer {
+    @apply w-full bg-[#CAEFFF] dark:bg-[#003052] text-black dark:text-white
+}
+
+.laptop-extrapage-bodycontainer {
+    @apply w-full bg-[#F8FCFF] dark:bg-[#202026] text-gray-600 dark:text-gray-400
+}
+
+.laptop-extrapage-bodycontainer .componentcontainer .cardcomponent {
+    @apply bg-white dark:bg-[#171717] text-gray-700 dark:text-gray-300 border border border-gray-300 rounded-xl
+}
+

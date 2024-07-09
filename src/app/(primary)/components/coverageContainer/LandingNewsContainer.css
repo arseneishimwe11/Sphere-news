@@ -1,0 +1,4 @@
+#coveragecontainer.laptop-extrapage-bodycontainer .componentcontainer .coveragenewsitem {
+    @apply flex flex-row items-start gap-2 w-full 
+}
+

@@ -1,0 +1,12 @@
+.jvectormap-container {
+    height: 100%;
+}
+
+.jvectormap-container svg {
+    height: 100%;
+}
+
+.jvectormap-zoomin,
+.jvectormap-zoomout { 
+    display: none;
+}

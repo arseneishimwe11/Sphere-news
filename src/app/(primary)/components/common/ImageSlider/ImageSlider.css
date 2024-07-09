@@ -1,0 +1,23 @@
+.carousel .slide .description {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+}
+
+.carousel .slide img {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.carousel .thumbs-wrapper {
+    text-align: center;
+}
+
+.carousel .thumbs-wrapper img {
+    border-radius: 12px;
+}
+
+.carousel .thumbs-wrapper .thumbs .thumb {
+    width: 112px!important;
+}

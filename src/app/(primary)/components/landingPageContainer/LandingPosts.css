@@ -1,0 +1,3 @@
+.laptop-landingpage-bodycontainer .componentcontainer #landingpostcontainer {
+    @apply flex flex-row 2xl:h-[492px]
+}

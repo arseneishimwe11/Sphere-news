@@ -1,0 +1,132 @@
+.laptop-header-container {
+    @apply w-full bg-white dark:bg-[#171717] text-gray-700 dark:text-gray-300 border-b
+}
+
+.laptop-header-container #topbackground {
+    @apply bg-[#003E6E] px-4
+}
+
+.laptop-header-container #topcontainer {
+    @apply w-full 2xl:w-[1380px] content-center m-auto flex flex-wrap justify-between
+}
+
+.laptop-header-container #topcontainer div {
+    @apply flex flex-row items-center gap-4
+}
+
+.laptop-header-container #topcontainer #rightpart {
+    @apply text-gray-400 dark:text-gray-500 text-[12px]
+}
+
+.laptop-header-container #topcontainer #rightpart .buttonmenu {
+    @apply hidden md:flex flex-row items-center gap-2 bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-300 p-1 rounded-md
+}
+
+.laptop-header-container #topcontainer #rightpart .buttonmenu span {
+    @apply text-[12px]
+}
+
+.boostmodalpanel {
+    @apply p-6 bg-white dark:bg-[#171717] text-black dark:text-white border border-gray-600 rounded-lg
+}
+
+.boostmodalpanel h5 {
+    @apply my-4 font-bold
+}
+
+.boostmodalpanel .collectionitem {
+    @apply flex min-h-[82px] gap-2 p-2 pb-3 border border-gray-400 dark:border-gray-500 rounded-md overflow-hidden hover:cursor-pointer hover:bg-[#fafafa] dark:hover:bg-[#0a0a0a]
+}
+
+.laptop-header-container #headercontent {
+    @apply flex justify-between items-start mt-8 gap-4
+}
+
+.laptop-header-container #headercontent section .collapsediv {
+    @apply flex items-center flex-wrap justify-between mx-2 my-1 text-black dark:text-gray-100 text-[12px]
+}
+
+.laptop-header-container #headercontent section .collapsediv h6 {
+    @apply text-[16px] 
+}
+
+.laptop-header-container #headercontent section .collapsediv div {
+    @apply flex gap-2
+}
+
+.laptop-header-container #headercontent section .collapsediv div select {
+    @apply p-2 bg-gray-200 dark:bg-gray-600 border border-0
+}
+
+.laptop-header-container #headercontent section .collapsediv div button {
+    @apply p-2 bg-gray-200 dark:bg-gray-600 text-gray-600 dark:text-gray-200
+}
+
+.laptop-header-container #headercontent section .settingbutton {
+    @apply bg-transparent text-gray-700 dark:text-gray-300
+}
+
+.laptop-header-container #topnavmenucontent {
+    @apply flex overflow-x-auto items-center mt-4 gap-2 lg:gap-8
+}
+
+.laptop-header-container #topnavmenucontent ul {
+    @apply flex flex-row whitespace-nowrap
+}
+
+.laptop-header-container #topnavmenucontent ul.mainmenuul {
+    @apply gap-2
+}
+
+.laptop-header-container #topnavmenucontent ul.mainmenuul li {
+    @apply rounded-md border border-[#4FBAE9] hover:cursor-pointer hover:bg-[#4FBAE9] hover:text-[#FFF]  
+}
+
+.laptop-header-container #topnavmenucontent ul.mainmenuul li a {
+    @apply flex flex-row gap-2 items-center px-2 py-1
+}
+
+.laptop-header-container #topnavmenucontent ul.channelsul {
+    @apply gap-4 items-center
+}
+
+.laptop-header-container #topnavmenucontent ul.channelsul li {
+    @apply hover:cursor-pointer px-2 py-2 text-[12px] transition duration-300 hover:bg-[#EFEFEF] hover:dark:bg-[#303030] 
+}
+
+
+
+
+
+
+
+
+
+.searchinputarea {
+    @apply bg-gray-100 dark:bg-gray-700 border-[#003E6E] dark:border-[#FAFAFA] border rounded-lg  flex items-center h-10 mx-2 relative 
+}
+
+.searchinputarea .searchicon {
+    @apply h-4 w-4 ml-2
+}
+
+.searchinputarea input {
+    @apply bg-transparent px-2 outline-none flex-grow text-[12px] text-gray-700 dark:text-gray-300
+}
+
+.searchinputarea .buttonarea {
+    @apply flex items-center h-full ml-auto bg-[#003E6E] rounded-md
+}
+
+.searchinputarea .buttonarea .actionbuttonarea {
+    @apply bg-gray-100 dark:bg-gray-700 flex flex-row items-center h-[100%] pl-2 pr-1 outline-none
+}
+
+.searchinputarea .buttonarea .actionbuttonarea .closeiconbutton {
+    @apply bg-transparent text-gray-400  rounded-full
+}
+
+.searchinputarea .buttonarea .searchiconbutton {
+    @apply text-gray-300
+}
+

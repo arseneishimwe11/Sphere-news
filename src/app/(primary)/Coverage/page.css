@@ -1,0 +1,19 @@
+#coveragecontainer.laptop-extrapage-bodycontainer .componentcontainer {
+    @apply py-20 px-4
+}
+
+#coveragecontainer.laptop-extrapage-bodycontainer .componentcontainer .newscategorytitle {
+    @apply flex flex-row gap-2 items-center text-black dark:text-gray-200
+}
+
+#coveragecontainer.laptop-extrapage-bodycontainer .componentcontainer .newscategorytitle p {
+    @apply my-2 text-[18px] md:text-[24px] font-bold
+}
+
+#coveragecontainer.laptop-extrapage-bodycontainer .coveragecontent {
+    @apply flex flex-row w-full gap-8
+} 
+
+#coveragecontainer.laptop-extrapage-bodycontainer .componentcontainer .title{
+    @apply my-4 text-[16px] md:text-[20px] text-black dark:text-gray-200 font-bold
+}

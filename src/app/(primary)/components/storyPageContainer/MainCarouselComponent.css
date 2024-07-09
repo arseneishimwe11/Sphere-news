@@ -1,0 +1,76 @@
+#MainCarouselComponent {
+    @apply text-black dark:text-white
+}
+
+#MainCarouselComponent #LandingDescriptionComponent {
+    @apply flex flex-col gap-4
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .channeltitle {
+    @apply flex items-center justify-between
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .channeltitle h4 {
+    @apply text-[#67ACC2] dark:text-[3C5398]
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .channelcontent {
+    @apply my-2
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .channelcontent h1 {
+    @apply font-bold leading-normal text-[2.5rem] text-black dark:text-white
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .channelcontent p {
+    @apply text-[20px] text-gray-600 dark:text-gray-400 my-2
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .TopicsComponent {
+    @apply flex text-black dark:text-white 
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .TopicsComponent div {
+    @apply flex flex-grow p-2 px-4 text-xl bg-[#D8F0FC] dark:bg-[#040617]
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .TopicsComponent div h6 {
+    @apply font-bold text-[#67ACC2] dark:text-[3C5398]
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .TopicsComponent button {
+    @apply bg-[#B8E1F1] p-2
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .UserListRelatedTopic {
+    @apply m-4
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .UserListRelatedTopic .UserAvatarList {
+    @apply flex items-end
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .UserListRelatedTopic .UserAvatarList div {
+    @apply p-[3px] border-0 bg-gradient-to-br from-[#f5a83e] to-[#3babc9] relative rounded-full
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .UserListRelatedTopic .UserAvatarList div img {
+    @apply w-[72px] border border-[3px] border-white rounded-full
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .UserListRelatedTopic .UserAvatarList div .addicon {
+    @apply p-[3px] bg-[#5DB2D2] text-[#fff] rounded-full right-0 top-0 absolute 
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .UserListRelatedTopic .UserInfoList .username {
+    @apply font-bold
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .UserListRelatedTopic .UserInfoList .userlocation {
+    @apply text-[#67ACC2] dark:text-[3C5398]
+}
+
+#MainCarouselComponent #LandingDescriptionComponent .UserListRelatedTopic button {
+    @apply text-black dark:text-white
+}
+
