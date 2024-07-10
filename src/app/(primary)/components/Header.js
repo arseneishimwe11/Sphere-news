@@ -1,6 +1,8 @@
+"use client"
 import './Header.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 
 import { useRouter } from 'next/navigation';
 import { useTheme } from "next-themes";
@@ -441,12 +443,10 @@ const UserMenu = (props) => {
         const [anchorEl, setAnchorEl] = useState(null);
         const open = Boolean(anchorEl);
         const handleClick = (event) => {
-            if (!path.startsWith('/Story')) {
-                router.push('/Pricing')
-                return;
-            }
+            router.push('/Pricing');
             setAnchorEl(event.currentTarget);
         };
+        
         const handleClose = () => {
             setAnchorEl(null);
         };
@@ -466,84 +466,10 @@ const UserMenu = (props) => {
                     onClick={handleClick}
                     size="small"
                     aria-label="Gift"
-                    aria-controls={open ? 'gift-menu' : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
                     className='buttonmenu'
                 >
                     <img src={props.imgSrc} />
                 </IconButton>
-                <Menu
-                    className='anchormenu'
-                    anchorEl={anchorEl}
-                    id="gift-menu"
-                    open={open}
-                    onClose={handleClose}
-                    onClick={handleClose}
-                    PaperProps={{
-                        elevation: 0,
-                        sx: {
-                            overflow: 'visible',
-                            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                            mt: 1.5,
-                            '& .MuiAvatar-root': {
-                                width: 32,
-                                height: 32,
-                                ml: -0.5,
-                                mr: 1,
-                            },
-                            '&:before': {
-                                content: '""',
-                                display: 'block',
-                                position: 'absolute',
-                                top: 0,
-                                right: 14,
-                                width: 10,
-                                height: 10,
-                                bgcolor: 'background.paper',
-                                transform: 'translateY(-50%) rotate(45deg)',
-                                zIndex: 0,
-                            },
-                        },
-                    }}
-                    transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                    anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-                >
-                    <div className="p-4 text-[#000]">
-                        <div className="flex flex-row justify-between mb-2 text-xl">
-                            <b>Send this article</b>
-                            <p>10/10</p>
-                        </div>
-                        <div>You have <b>10 gift articles</b> available<br />to share this month. <Link href='#'>Learn more</Link>.<br />&nbsp;</div>
-                        <MenuItem onClick={handleClose}>
-                            <MenuIcon icon={LinkIcon} title="Get link" />
-                        </MenuItem>
-                        <Divider />
-                        <MenuItem onClick={handleClose}>
-                            <MenuIcon icon={FacebookIcon} title="Share On Facebook" />
-                        </MenuItem>
-                        <Divider />
-                        <MenuItem onClick={handleClose}>
-                            <MenuIcon icon={TwitterIcon} title="Share On Twitter" />
-                        </MenuItem>
-                        <Divider />
-                        <MenuItem onClick={handleClose}>
-                            <MenuIcon icon={EmailIcon} title="Email" />
-                        </MenuItem>
-                        <Divider />
-                        <MenuItem onClick={handleClose}>
-                            <MenuIcon icon={LinkedInIcon} title="Share On LinkedIn" />
-                        </MenuItem>
-                        <Divider />
-                        <MenuItem onClick={handleClose}>
-                            <MenuIcon icon={WhatsAppIcon} title="Share On WhatsApp" />
-                        </MenuItem>
-                        <Divider />
-                        <MenuItem onClick={handleClose}>
-                            <MenuIcon icon={RedditIcon} title="Share On Reddit" />
-                        </MenuItem>
-                    </div>
-                </Menu>
             </>
         );
     }
@@ -993,105 +919,151 @@ const Header = () => {
     const [isFocus, setIsFocus] = useState(false);
     const [expandFilter, setExpandFilter] = useState(false);
     const [openAdvancedSettingModal, setOpenAdvancedSettingModal] = useState(false);
-
+    const [customDateRange, setCustomDateRange] = useState('Custom Range');
+  
+    useEffect(() => {
+        const loadScripts = async () => {
+          const jQuery = (await import('jquery')).default;
+          window.$ = window.jQuery = jQuery;   
+          const moment = (await import('moment')).default;    
+          await import('daterangepicker');    
+          jQuery('#dateRangePicker').daterangepicker({
+            opens: 'center',
+            showDropdowns: false, // year and month dropdowns
+            locale: {
+              format: 'MM/DD/YYYY'
+            },
+            singleDatePicker: false,
+            maxSpan: {
+              "days": 30 // Maximum range selection of 30 days
+            }
+          }, function (start, end, label) {
+            jQuery('#customRangeBtn').text(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
+          });
+    
+          jQuery('#customRangeBtn').on('click', function () {
+            jQuery('#dateRangePicker').click();
+          });
+        };
+    
+        loadScripts();
+      }, []);
+    
+  
     return (
+      <div>
+        <Head>
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+          />
+        </Head>
         <div id="headercontent">
-            <section className="my-1">
-                <Link href="/">
-                    <img
-                        src="/img/logo/sphere/main.svg"
-                        alt="Vercel Logo"
-                        className="dark:invert min-w-[146px]"
-                        width={146}
-                        height={40}
-                    />
-                </Link>
-            </section>
-            <section className='hidden md:flex flex-col flex-grow min-w-[284px]'>
-                <div className="searchinputarea">
-                    <img className='searchicon' src='/img/icons/colorful_search.png' />
-                    <input
-                        type="text"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        onFocus={() => setIsFocus(true)}
-                        placeholder='Search for Topics, locations & sources...'
-                    />
-                    <div className='buttonarea'>
-                        <div className='actionbuttonarea'>
-                            <IconButton onClick={() => { setSearchQuery(''); setIsFocus(false) }} >
-                                <CancelRoundedIcon className='closeiconbutton' sx={{ width: '18px', height: '18px' }} />
-                            </IconButton>
-                        </div>
-                        <div className='bg-gray-100 dark:bg-gray-700 rounded-r-md p-[2px]'>
-                            <SearchDropdown />
-                        </div>
-                        <Link href='/Search'>
-                            <IconButton onClick={() => { setSearchQuery(''); setIsFocus(false) }} >
-                                <ArrowForwardIcon className='searchiconbutton' sx={{ width: '22px', height: '22px' }} />
-                            </IconButton>
-                        </Link>
-                    </div>
-                    <SearchResultPanel
-                        isFocus={isFocus}
-                        q={searchQuery}
-                        setSearchQuery={setSearchQuery}
-                        setIsFocus={setIsFocus}
-                    />
+          <section className="my-1">
+            <Link href="/">
+              <img
+                src="/img/logo/sphere/main.svg"
+                alt="Vercel Logo"
+                className="dark:invert min-w-[146px]"
+                width={146}
+                height={40}
+              />
+            </Link>
+          </section>
+          <section className='hidden md:flex flex-col flex-grow min-w-[284px]'>
+            <div className="searchinputarea">
+              <img className='searchicon' src='/img/icons/colorful_search.png' />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onFocus={() => setIsFocus(true)}
+                placeholder='Search for Topics, locations & sources...'
+              />
+              <div className='buttonarea'>
+                <div className='actionbuttonarea'>
+                  <IconButton onClick={() => { setSearchQuery(''); setIsFocus(false) }} >
+                    <CancelRoundedIcon className='closeiconbutton' sx={{ width: '18px', height: '18px' }} />
+                  </IconButton>
                 </div>
-                <Collapse in={expandFilter}>
-                    <div className="collapsediv" >
-                        <h6>Filter & Sort</h6>
-                        <div>
-                            <IconButton sx={{ backgroundColor: 'transparent !important', fontSize: 12, borderRadius: '0px !important' }}>
-                                <FilterAltOffOutlinedIcon sx={{ fontSize: 16 }} />
-                                Reset All
-                            </IconButton>
-                            <select name="language">
-                                <option value="all">All Languages</option>
-                                <option value="english">English</option>
-                            </select>
-                            <select name="find_in">
-                                <option value="all">Title & Content</option>
-                                <option value="title">Title</option>
-                                <option value="content">Content</option>
-                            </select>
-                            <select name="sort_by">
-                                <option value="match">Best Match</option>
-                                <option value="popularity">Popularity</option>
-                                <option value="newest">Newest</option>
-                                <option value="oldest">Oldest</option>
-                            </select>
-                            <select name="time">
-                                <option value="today">Today</option>
-                                <option value="week">Past 7 days</option>
-                                <option value="month">Past 30 days</option>
-                                <option value="year">Past year</option>
-                                <option value="all">All Time</option>
-                                <option value="custom">Custom Range</option>
-                            </select>
-                            <select name="content">
-                                <option value="all">Any Content</option>
-                                <option value="article">Articles</option>
-                                <option value="video">Videos</option>
-                                <option value="image">Images</option>
-                            </select>
-                        </div>
-                    </div>
-                </Collapse>
-            </section>
-            <section className="flex items-center justify-between gap-1">
-                <IconButton className='settingbutton' onClick={() => { setExpandFilter(!expandFilter); }} >
-                    <TuneIcon sx={{ fontSize: '24px' }} />
-                </IconButton>
-                <IconButton className='settingbutton' onClick={() => { setOpenAdvancedSettingModal(true); }} >
-                    <BlurOnIcon sx={{ fontSize: '24px' }} />
-                </IconButton>
-                <AdvancedSearchQuery modalOpen={openAdvancedSettingModal} setModalOpen={setOpenAdvancedSettingModal} />
-            </section>
+                <div className='bg-gray-100 dark:bg-gray-700 rounded-r-md p-[2px]'>
+                  <SearchDropdown />
+                </div>
+                <Link href='/Search'>
+                  <IconButton onClick={() => { setSearchQuery(''); setIsFocus(false) }} >
+                    <ArrowForwardIcon className='searchiconbutton' sx={{ width: '22px', height: '22px' }} />
+                  </IconButton>
+                </Link>
+              </div>
+              <SearchResultPanel
+                isFocus={isFocus}
+                q={searchQuery}
+                setSearchQuery={setSearchQuery}
+                setIsFocus={setIsFocus}
+              />
+            </div>
+            <Collapse in={expandFilter}>
+              <div className="collapsediv">
+                <h6>Filter & Sort</h6>
+                <div>
+                  <IconButton sx={{ backgroundColor: 'transparent !important', fontSize: 12, borderRadius: '0px !important' }}>
+                    <FilterAltOffOutlinedIcon sx={{ fontSize: 16 }} />
+                    Reset All
+                  </IconButton>
+                  <select name="language">
+                    <option value="all">All Languages</option>
+                    <option value="english">English</option>
+                  </select>
+                  <select name="find_in">
+                    <option value="all">Title & Content</option>
+                    <option value="title">Title</option>
+                    <option value="content">Content</option>
+                  </select>
+                  <select name="sort_by">
+                    <option value="match">Best Match</option>
+                    <option value="popularity">Popularity</option>
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
+                  </select>
+                  <select name="time" onChange={(e) => {
+                    if (e.target.value === 'custom') {
+                      document.getElementById('customRangeBtn').click();
+                    }
+                  }}>
+                    <option value="today">Today</option>
+                    <option value="week">Past 7 days</option>
+                    <option value="month">Past 30 days</option>
+                    <option value="year">Past year</option>
+                    <option value="all">All Time</option>
+                    <option value="custom">
+                        <button id="customRangeBtn"> {customDateRange} </button>
+                        <input type="text" id="dateRangePicker" style={{ display: 'none' }} />
+                    </option>
+                  </select>
+                  <select name="content">
+                    <option value="all">Any Content</option>
+                    <option value="article">Articles</option>
+                    <option value="video">Videos</option>
+                    <option value="image">Images</option>
+                  </select>
+                </div>
+              </div>
+            </Collapse>
+          </section>
+          <section className="flex items-center justify-between gap-1">
+            <IconButton className='settingbutton' onClick={() => { setExpandFilter(!expandFilter); }} >
+              <TuneIcon sx={{ fontSize: '24px' }} />
+            </IconButton>
+            <IconButton className='settingbutton' onClick={() => { setOpenAdvancedSettingModal(true); }} >
+              <BlurOnIcon sx={{ fontSize: '24px' }} />
+            </IconButton>
+            <AdvancedSearchQuery modalOpen={openAdvancedSettingModal} setModalOpen={setOpenAdvancedSettingModal} />
+          </section>
         </div>
+      </div>
     );
-};
+  };
+  
 
 
 const MainMenu = (props) => {
